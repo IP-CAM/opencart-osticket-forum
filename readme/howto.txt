@@ -1,0 +1,91 @@
+                                                        Opencart, osticket, phpbb integration pack 2.0
+                                                        ==============================================
+
+Key features: 
+    # realtime session integration without database
+    # all mods are properly commented
+
+
+based upon:
+    opencart: opencart-1.5.5.1
+    ticket: osTicket-v1.8.1.2
+    forum: phpBB-3.0.12
+    
+    all must be in the same server
+
+
+instructions:
+============
+### after installation, remove the install folder from each system
+
+    opencart:
+    ========
+        for header menu:
+            # navigate into opencart admin >> catalog >> Categories >> insert
+                then insert "Support" for "Category Name" (in the General tab),
+                tickmark "Top", put 10 in Sort Order, (in the Data tab),
+                and then save
+            # now again into the admin >> catalog >> Categories >> insert,
+                then insert "ticket" for "Category Name" (in the General tab),
+                type 'support' inside input field "Parent", select the result, (in the Data tab),
+                and then save
+            # again for 'forum'
+                
+        ## change in opencart/forum/adm/index.php
+        ## change in opencart/catalog/controller/common/header.php
+        ## (new file) opencart/catalog/view/javascript/jquery.iframe-auto-height.plugin.1.7.1.min.js
+        
+        ## (new folder) opencart/catalog/view/theme/default/template/support
+        ## (new folder) opencart/catalog/controller/support
+        ## change in opencart/config.php
+
+    ticket (folder name must be "ticket" for the redirection to work)
+    =================================================================
+        # new: ticket/include/plugins/oc_integration (whole folder) (again)
+
+        changes in:
+            # ticket/include/client/header.inc.php again
+            # ticket/include/client/open.inc.php
+            # ticket/include/client/profile.inc.php
+            # ticket/include/staff/ticket-view.inc.php
+            # ticket/include/class.auth.php
+            # ticket/include/class.ostsession.php
+            # ticket/include/class.ticket.php
+            # ticket/client.inc.php
+            # ticket/bootstrap.php
+            # ticket/open.php
+            # ticket/secure.inc.php
+            # ticket/tickets.php
+
+    forum (folder name must be "forum" for the redirection to work)
+    ===============================================================
+    # from admin menu change registration>disabled : see the image User "registration settings.png"
+    # new : phpbb3/integration folder (again)
+    
+    theme change:
+        replace phpbb3/styles/prosilver/template/overall_header.html with forum/integration/overall_header.html again
+        replace phpbb3/styles/prosilver/template/index_body.html with forum/integration/index_body.html again
+        replace phpbb3/styles/prosilver/template/login_body.html with forum/integration/login_body.html again
+        
+    change in:
+        # forum/common.php
+        # forum/includes/auth.php
+        # forum/includes/functions.php
+        # forum/includes/session.php
+        
+All forum users must change their passwords after login for the first time,
+initial password and username is their email address from opencart
+
+
+
+
+
+
+
+
+
+=================================================================
+
+https://github.com/minhaj-vimmaniac
+
+http://vimmaniac.com

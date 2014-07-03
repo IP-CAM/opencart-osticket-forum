@@ -1,0 +1,1 @@
+2014-05-30 12:09:33 - PHP Notice:  Use of undefined constant FORUM_URL - assumed 'FORUM_URL' in /var/www/html/hunt_easter/newintegration/opencart/catalog/controller/support/forum.php on line 10
