@@ -9,4 +9,4 @@ let them to be attached with your shop, invite their friends.
 <br>
 Resulting in great leverage to make your store popular, having higher sales.
 
-Make sales, make more clients.
+Make sales, resulting in even more customers.
